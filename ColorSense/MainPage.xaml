@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ColorSense.MainPage">
+
+    <StackLayout Padding="0,20,0,0" BackgroundColor="Black">
+        <Image Source="ColorSenseLogoSF"
+               WidthRequest="100"
+               HeightRequest="100"/>
+
+        <StackLayout HorizontalOptions="Center" Orientation="Vertical" VerticalOptions="Center">
+
+        <!-- Imagem para mostrar a foto capturada ou selecionada -->
+        <Image 
+            x:Name="Imagem" 
+            WidthRequest="500" 
+            HeightRequest="300" 
+            Aspect="AspectFill" 
+            HorizontalOptions="Center"
+            IsVisible="False"
+            Margin="0,20,0,0"/>
+
+        <!-- Caixa para mostrar a cor predominante -->
+        <BoxView 
+            x:Name="CorDominante" 
+            WidthRequest="100" 
+            HeightRequest="60" 
+            Color="Transparent"
+            IsVisible="False"
+            Margin="0,-10,0,0"/>
+
+        <!-- Rótulo para mostrar o nome da cor -->
+        <Label 
+            x:Name="ColorLabel" 
+            FontSize="Large" 
+            HorizontalOptions="Center"
+            IsVisible="False"
+            TextColor="White"/>
+
+            <StackLayout Spacing="30" Orientation="Horizontal" VerticalOptions="Center" HorizontalOptions="Center" Margin="0,20,0,0">
+                <!-- Botão para tirar foto -->
+                <ImageButton
+                    Source="camera"  
+                    Clicked="CapturarFoto" 
+                    HeightRequest="130"
+                    WidthRequest="130"
+                    BackgroundColor="#e85d75"
+                    CornerRadius="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="20"/>
+
+                <!-- Botão para selecionar uma foto da galeria -->
+                <ImageButton 
+                    Source="galeria"
+                    Clicked="SelecionarFoto"
+                    HeightRequest="130"
+                    WidthRequest="130"
+                    BackgroundColor="#b3c2f2"
+                    CornerRadius="20"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="20"/>
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+
+</ContentPage>
